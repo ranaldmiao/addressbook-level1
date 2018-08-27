@@ -14,14 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /*
  * NOTE : =============================================================
@@ -806,6 +799,19 @@ public class AddressBook {
      */
     private static ArrayList<String[]> getAllPersonsInAddressBook() {
         return ALL_PERSONS;
+    }
+
+    /**
+     * Sorts all persons in the address book based on their name, in alphabetical order.
+     */
+    private static void sortAddressBook() {
+        Comparator<String[]> personNameComparator = (personA, personB) -> {
+            String personAName = getNameFromPerson(personA);
+            String personBName = getNameFromPerson(personB);
+            return personAName.compareTo(personBName);
+        };
+        Collections.sort(ALL_PERSONS, personNameComparator);
+        savePersonsToFile(getAllPersonsInAddressBook(), storageFilePath);
     }
 
     /**
