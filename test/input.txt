@@ -100,6 +100,27 @@
   list
 
 ##########################################################
+# test sort person command
+##########################################################
+
+
+  # should add correctly
+  add Adam Brown p/111111 e/adam@gmail.com
+  list
+  add Charlie Dickson e/charlie.d@nus.edu.sg p/333333
+  list
+  add Betsy Choo p/222222 e/benchoo@nus.edu.sg
+  list
+
+  # order of phone and email should not matter
+  add Esther Potato p/555555 e/esther@notreal.potato
+  list
+  add Dickson Ee e/dickson@nus.edu.sg p/444444
+  list
+  sort
+  list
+
+##########################################################
 # test exit command
 ##########################################################
 
