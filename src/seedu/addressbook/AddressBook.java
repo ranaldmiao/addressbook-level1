@@ -383,7 +383,7 @@ public class AddressBook {
         case COMMAND_EXIT_WORD:
             executeExitProgramRequest();
         case COMMAND_SORT_WORD:
-            executeSortAddressBook();
+            return executeSortAddressBook();
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
@@ -1141,7 +1141,7 @@ public class AddressBook {
     /** Returns the string for showing 'sort' command usage instruction */
     private static String getUsageInfoForSortCommand() {
         return String.format(MESSAGE_COMMAND_HELP, COMMAND_SORT_WORD, COMMAND_SORT_DESC) + LS
-                + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_HELP_EXAMPLE) + LS;
+                + String.format(MESSAGE_COMMAND_HELP_EXAMPLE, COMMAND_SORT_EXAMPLE) + LS;
     }
 
     /** Returns string for showing 'clear' command usage instruction */
