@@ -383,7 +383,7 @@ public class AddressBook {
         case COMMAND_EXIT_WORD:
             executeExitProgramRequest();
         case COMMAND_SORT_WORD:
-            executeSortAddressBook()
+            executeSortAddressBook();
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
